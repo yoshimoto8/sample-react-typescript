@@ -1,0 +1,25 @@
+{
+  "name": "setuptypescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --open",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "awesome-typescript-loader": "^5.0.0",
+    "typescript": "^2.9.1",
+    "webpack": "^4.12.0",
+    "webpack-cli": "^3.0.3"
+  },
+  "dependencies": {
+    "@types/react": "^16.3.17",
+    "@types/react-dom": "^16.0.6",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "webpack-dev-server": "^3.1.4"
+  }
+}
