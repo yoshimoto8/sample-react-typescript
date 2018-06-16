@@ -13,6 +13,13 @@ module.exports = [{
     resolve: {
       extensions: ['.js', '.json', '.ts', '.tsx'],
     },
+    devServer: {
+      contentBase: './dist', 
+      inline: true,
+      host: 'localhost',
+      port: 8081,
+      stats: 'errors-only'
+    },
     module: {
       rules: [
         {
