@@ -1,11 +1,14 @@
 import * as React from 'react';
 
-interface Props {}
+interface Props {
+  handleAddTodo: () => void;
+}
 
-export const AddTodo = (props: Props) => {
+export const AddTodo: React.StatelessComponent<Props> = props => {
   return (
-    <from>
+    <form>
       <input type="text" />
-    </from>
+      <button>インプット</button>
+    </form>
   );
 };
