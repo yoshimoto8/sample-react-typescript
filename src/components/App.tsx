@@ -20,7 +20,8 @@ class App extends React.Component<Props, State> {
     e.preventDefault();
     const id: number = this.state.todos.length + 1;
     this.setState({
-      todos: [...this.state.todos, { id: id, text: this.state.textValue }]
+      todos: [...this.state.todos, { id: id, text: this.state.textValue }],
+      textValue: ''
     });
   };
 

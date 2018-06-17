@@ -6,10 +6,6 @@ interface Props {
   textValue: string;
 }
 
-// const onChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-//   e.target.value;
-// };
-
 export const AddTodo: React.StatelessComponent<Props> = props => {
   return (
     <form>
