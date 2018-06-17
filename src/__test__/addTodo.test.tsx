@@ -12,12 +12,18 @@ describe('AddTodo test', () => {
     <AddTodo
       handleAddTodo={handleAddTodo}
       handleChangeText={handleChangeText}
-      textValue=""
+      textValue="aaa"
     />
   );
-  it('handleAddTodo test', () => {
+
+  it('handleAddTodo test called', () => {
     const subject = wrapper.find('button');
     subject.simulate('click');
     expect(handleAddTodo).toHaveBeenCalled();
+  });
+  it('handleChangeText test called', () => {
+    const subject = wrapper.find('input');
+    subject.simulate('change', { textValue: 'a' });
+    expect(handleChangeText).toHaveBeenCalled();
   });
 });
