@@ -5,18 +5,27 @@ import { AddTodo } from './AddTodo';
 interface Props {}
 interface State {
   todos: { id: number; text: string }[];
+  textValue: string;
 }
 class App extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = {
-      todos: [{ id: 1, text: 'test' }]
+      todos: [{ id: 1, text: 'test' }],
+      textValue: ''
     };
   }
 
-  handleAddTodo = (text: string) => {
+  handleAddTodo = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
     const id: number = this.state.todos.length + 1;
-    this.setState({ todos: [...this.state.todos, { id: id, text: text }] });
+    this.setState({
+      todos: [...this.state.todos, { id: id, text: this.state.textValue }]
+    });
+  };
+
+  handleChangeText = (e: React.ChangeEvent<HTMLInputElement>) => {
+    this.setState({ textValue: e.target.value });
   };
 
   render() {
@@ -24,7 +33,11 @@ class App extends React.Component<Props, State> {
       <div>
         <h1>Todoアプリ</h1>
         <Todo todos={this.state.todos} />
-        <AddTodo handleAddTodo={() => this.handleAddTodo} />
+        <AddTodo
+          handleAddTodo={e => this.handleAddTodo(e)}
+          textValue={this.state.textValue}
+          handleChangeText={e => this.handleChangeText(e)}
+        />
       </div>
     );
   }
