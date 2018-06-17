@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Todo } from './Todo';
 import { AddTodo } from './AddTodo';
+import { funcAddTodo, funcChangeText } from './functions/handleAddTodo';
 
 interface Props {}
 interface State {
@@ -18,15 +19,11 @@ class App extends React.Component<Props, State> {
 
   handleAddTodo = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    const id: number = this.state.todos.length + 1;
-    this.setState({
-      todos: [...this.state.todos, { id: id, text: this.state.textValue }],
-      textValue: ''
-    });
+    this.setState(funcAddTodo(this.state.todos, this.state.textValue));
   };
 
   handleChangeText = (e: React.ChangeEvent<HTMLInputElement>) => {
-    this.setState({ textValue: e.target.value });
+    this.setState(funcChangeText(e.target.value));
   };
 
   render() {

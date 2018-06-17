@@ -12,7 +12,7 @@
 ## quick start
 
 ```
-git clone URL
+git clone git@github.com:yoshimoto8/sample-react-typescript.git
 yarn install
 yarn start
 

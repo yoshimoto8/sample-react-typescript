@@ -11,8 +11,8 @@ export const Todo = (props: Props) => {
       {todos.map((data: { id: number; text: string }, index) => {
         return (
           <div key={index}>
-            <span>{data.id}</span>
-            <span>{data.text}</span>
+            <span className="todo-id">{data.id}</span>
+            <span className="todo-text">{data.text}</span>
           </div>
         );
       })}
